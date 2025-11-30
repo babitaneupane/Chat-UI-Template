@@ -1,0 +1,169 @@
+:root {
+  --bg: #f7f7fb;
+  --text: #0b1220;
+  --muted: #6b7280;
+  --sidebar-bg: #ffffff;
+  --accent: #6c63ff;
+  --bubble-out: #e9e7ff;
+  --bubble-in: #ffffff;
+  --avatar-bg: #6c63ff;
+}
+
+.dark {
+  --bg: #0b1220;
+  --text: #e6eef6;
+  --muted: #9aa6b2;
+  --sidebar-bg: #071125;
+  --accent: #7c5cff;
+  --bubble-out: #1f2a37;
+  --bubble-in: #0f1720;
+  --avatar-bg: #2563eb;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+.app {
+  display: flex;
+  height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+.sidebar {
+  width: 280px;
+  border-right: 1px solid rgba(0,0,0,0.06);
+  background: var(--sidebar-bg);
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px;
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.mini-logo { height: 28px; opacity: .9 }
+.mini-logo.react { filter: hue-rotate(200deg) }
+
+.toggle {
+  background: transparent;
+  border: 1px solid rgba(0,0,0,0.06);
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.contacts {
+  padding: 8px;
+  overflow-y: auto;
+  flex: 1 1 auto;
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 6px 4px;
+}
+.contact:hover { background: rgba(0,0,0,0.02) }
+.contact.active { background: rgba(108,99,255,0.12) }
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--avatar-bg);
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+.avatar.small { width: 34px; height: 34px; font-size: 13px }
+.avatar.large { width: 48px; height: 48px; font-size: 14px }
+
+.meta .name { font-weight: 600 }
+.meta .status { font-size: 12px; color: var(--muted) }
+
+.chat {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+.contact-info { display:flex; align-items:center; gap:12px }
+.status.small { font-size: 12px; color: var(--muted) }
+
+.messages {
+  padding: 18px;
+  flex: 1 1 auto;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.message { display:flex; align-items:flex-end; gap:8px }
+.message.incoming { justify-content:flex-start }
+.message.outgoing { justify-content:flex-end }
+.message .spacer { width: 48px }
+
+.bubble {
+  max-width: 65%;
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: var(--bubble-in);
+  box-shadow: 0 2px 6px rgba(2,6,23,0.04);
+}
+.message.outgoing .bubble { background: var(--bubble-out) }
+
+.text { color: var(--text); line-height: 1.35 }
+.time { font-size: 11px; color: var(--muted); margin-top:6px }
+
+.composer {
+  display: flex;
+  gap: 8px;
+  padding: 12px;
+  border-top: 1px solid rgba(0,0,0,0.04);
+  align-items: center;
+}
+.composer input {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.06);
+  background: transparent;
+  color: var(--text);
+}
+.composer .send {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* keep legacy logo styles lightly for header logos */
+.logo { height: 3.2em; opacity: 0.95 }
